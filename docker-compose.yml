@@ -1,0 +1,15 @@
+version: "3"
+services:
+  web:
+    build: . # 创建镜像
+    image: node-test # 镜像名
+    container_name: web-test # 设置容器名
+    ports:
+      - 3000:3000
+  nginx:
+    build:
+      context: ./nginx # 指定为构建镜像上下文路径
+    image: nginx-test
+    container_name: nginx-test
+    ports:
+      - 8080:8080
